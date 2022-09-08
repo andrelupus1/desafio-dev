@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTransactionTable extends Migration
      */
     public function up()
     {
-        Schema::create('transacao', function (Blueprint $table) {
+        Schema::create('transacaos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tipo');
             $table->string('data', 8);
@@ -23,6 +23,12 @@ class CreateTransactionTable extends Migration
             $table->string('hora', 6);
             $table->string('dono', 14);
             $table->string('loja', 19);
+            $table->timestamps();
+
+            $table->foreign('tipo')
+                    ->references('id')
+                    ->on('tipo_transacaos')
+                    ->onDelete('cascade');
         });
     }
 
@@ -33,6 +39,6 @@ class CreateTransactionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction');
+        Schema::dropIfExists('transacaos');
     }
-}
+};

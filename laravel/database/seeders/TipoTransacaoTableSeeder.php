@@ -16,8 +16,6 @@ class TipoTransacaoTableSeeder extends Seeder
     public function run()
     {
         
-
-        DB::table('tipo_transacaos')->delete();
         
         DB::table('tipo_transacaos')->insert(
             [
