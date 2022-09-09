@@ -34,7 +34,7 @@ class fileUploadController extends Controller
             return "Erro inesperado! ";
         }
 
-        return redirect()->back()->with(['operacao' => true]);
+        return redirect()->back(300)->with(['operacao' => true]);
         
     }
         

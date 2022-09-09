@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Tests\TestCase;
 
 class ParseCnabTest extends TestCase
@@ -15,8 +17,9 @@ class ParseCnabTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/');
+        $file = FacadesFile::files(public_path('files'));
+        $response = $this->post('/upload-file',['file'=> $file]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(419);
     }
 }

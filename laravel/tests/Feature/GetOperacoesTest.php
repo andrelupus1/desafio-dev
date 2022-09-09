@@ -15,8 +15,7 @@ class GetOperacoesTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $response = $this->get('/exibir-operacoes',['loja'=>'bar']);
+        $response->assertViewIs('operacoes');
     }
 }
