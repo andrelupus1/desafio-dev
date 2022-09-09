@@ -29,11 +29,12 @@ class fileUploadController extends Controller
             $transacao = $this->filter($transacao);
             $this->store($transacao);
 
-            return redirect('/exibir-operacoes');
 
         } catch (\Throwable $th) {
             return "Erro inesperado! ";
         }
+
+        return redirect()->back()->with(['operacao' => true]);
         
     }
         
@@ -72,9 +73,9 @@ class fileUploadController extends Controller
         
     }
 
-    public function getOperacoes()
+    public function getOperacoes(Request $request)
     {
-        $this->TransacaoRepository->getTransacoes('Bar');
+        return $this->TransacaoRepository->getTransacoes($request->loja);
     }
 
 

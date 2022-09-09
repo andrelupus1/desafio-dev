@@ -57,6 +57,9 @@ body{
       color:#2590EB;
 
     }
+    table, th, td {
+  border: 1px solid red;
+}
 
 
 

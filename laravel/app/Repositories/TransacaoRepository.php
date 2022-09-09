@@ -44,7 +44,11 @@ class TransacaoRepository {
         ['%'.$loja.'%','+','%'.$loja.'%','-']);
         $SaldoTotal = array_pop($SaldoTotal);
 
-        dd($SaldoTotal);
+        return view('operacoes',[
+            'data'=> $data,
+            'saldo' => $SaldoTotal
+        ]);
+        
     }
 
 }
