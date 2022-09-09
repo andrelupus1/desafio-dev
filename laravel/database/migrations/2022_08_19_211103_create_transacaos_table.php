@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('transacaos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tipo');
-            $table->string('data', 8);
+            $table->string('data', 30);
             $table->string('valor', 10);
             $table->string('cpf', 11);
             $table->string('cartao', 12);
-            $table->string('hora', 6);
+            $table->string('hora', 15);
             $table->string('dono', 14);
             $table->string('loja', 19);
             $table->timestamps();

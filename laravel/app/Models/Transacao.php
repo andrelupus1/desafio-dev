@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transacao extends Model
 {
-    protected $table = 'transacao';
+    protected $table = 'transacaos';
 
     protected $fillable = ['tipo', 'data', 'valor', 'cpf', 'cartao', 'hora', 'dono', 'loja'];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function tipo()
     {

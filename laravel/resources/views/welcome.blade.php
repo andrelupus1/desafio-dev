@@ -9,7 +9,6 @@
         <input type = "file" name = "file" id = "file">
         <i class="fa fa-arrow-up"></i>
     </div>
-    <input type="submit" value="dfsdfsf">
     </form>
 
   </div>

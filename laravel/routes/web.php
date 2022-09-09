@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\fileUploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::post('/upload-file', function(Request $request){
-    return "Is working";
-})->name('execute');
+Route::post('/upload-file',[fileUploadController::class,'parsecnab'])->name('execute');
+Route::get('/exibir-operacoes',[fileUploadController::class,'getOperacoes'])->name('exibirOperacoes');
